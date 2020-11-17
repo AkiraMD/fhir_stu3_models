@@ -4,6 +4,21 @@ FHIR STU3 Resource models generated from FHIR StructureDefinitions.
 
 The StructureDefinitions, XML Schemas, and examples are reused from the [HL7 FHIR build tools](https://github.com/HL7/fhir).
 
+### This is a fork (for v1.4.0)
+This repo is a fork of the open source [`fhir_stu3_models`](https://github.com/fhir-crucible/fhir_stu3_models), the [recommended Ruby implementation for FHIR STU3 resources](https://wiki.hl7.org/Open_Source_FHIR_implementations).
+
+This forked version supports [FHIR STU3 v1.4.0](http://hl7.org/fhir/2016May/).
+
+The reason we cannot use the official `fhir_stu3_models` as-is, is because it supports the latest version of FHIR STU3 (v3.0.2 as of Nov 2020) and doesn't have a snapshot that supports v1.4.0. There are some breaking changes between FHIR v1.4.0 and v3.0.2, noticeably the `Practitioner` and `MessageHeader` resources.
+
+The approach we took to customize this fork:
+1. find the the schema definitions in an old commit matching the version I would like to support (v1.4.0 in this case, from [a commit back in 2016](https://github.com/fhir-crucible/fhir_stu3_models/tree/ba058c4f8c3df166974ccca9e4d522051d1f2f38))
+2. checkout the latest version of the repo, overwrite the schema definitions (everything inside the `definitions` folder)
+3. run the rake task to generate resource classes (`bundle exec rake fhir:generate`)
+4. also overwrite the files in `examples` from the old commit
+
+@luislee818 accidentally opened a PR to be merged to the official repo, which led to discussion with one of the maintainers, and he [confirmed the above approach is the way to go](https://github.com/fhir-crucible/fhir_stu3_models/pull/12#issuecomment-724984056).
+
 ### Getting Started
 ```
 $ bundle install
