@@ -107,7 +107,7 @@ GEM
     tdiff (0.3.4)
     test-unit (3.3.3)
       power_assert
-    thor (0.20.3)
+    thor (1.4.0)
     unicode-display_width (1.5.0)
 
 PLATFORMS
