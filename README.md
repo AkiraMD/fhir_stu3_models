@@ -1,3 +1,7 @@
+# Archived Repository
+
+This repository has been archived and is no longer maintained.
+
 # fhir_stu3_models [![Build Status](https://api.travis-ci.org/fhir-crucible/fhir_stu3_models.svg?branch=master)](https://travis-ci.org/fhir-crucible/fhir_stu3_models)
 
 FHIR STU3 Resource models generated from FHIR StructureDefinitions.
